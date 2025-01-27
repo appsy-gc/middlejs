@@ -1,6 +1,7 @@
 // Import the ExpressJS Package
 const express = require('express')
 const mongoose = require('mongoose')
+const testieRouter = require('./routes/testieRoutes')
 
 // Create an instance of Express
 const app = express()
@@ -10,7 +11,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 // Declare routes
-
+app.use('/testies', testieRouter)
 
 // Declare the port number
 const port = 3000
